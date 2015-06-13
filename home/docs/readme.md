@@ -1,0 +1,1 @@
+the docs folder is for saving whitepapers, books, guides, etc.

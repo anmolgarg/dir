@@ -1,1 +1,1 @@
-sandbox is for adhoc analysis and scripts
+the sandbox folder is for adhoc analysis and scripts
