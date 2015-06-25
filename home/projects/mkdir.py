@@ -33,7 +33,7 @@ def make_project_dir(name, date = True, template = './template', root = './'):
 
     # create readme.md file
     readthis = name.upper()+'\n\ncreated by: ' + os.getlogin() + '\ncreated at: ' + str(dt.datetime.now())
-    readme = os.open(root + folder_name + "/readme.md", os.O_RDWR | os.O_CREAT)
+    readme = os.open(root + folder_name + "/README.md", os.O_RDWR | os.O_CREAT)
     os.write(readme, readthis)
     os.close(readme)
     print 'created', folder_name
