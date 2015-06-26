@@ -1,7 +1,7 @@
-# added by Anaconda 2.0.1 installer
+# anaconda pointer
 export PATH="//anaconda/bin:$PATH"
 
-# java
+# java pointer
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 
 
@@ -15,23 +15,24 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 # optional aliasi
 alias ipy="ipython notebook"
-alias s="subl ." # (requires $sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/bin/subl)
+alias s="subl ."
+alias fishie='echo "¸.·¯·.¯·.¸¸.·¯·.¸¸.·¯·.¯·.¸¸.·¯·.¸¸.·¯·.¯·.¸¸.·¯·.¸><(((º>"'
 
 
-# z (see github.com/rupa/z)
-. ~/z.sh
-
-# color prompt (see blog.bigdinosaur.org/easy-ps1-colors/)
+# color prompt
 function color_my_prompt {
     #local __user_and_host="\[\033[01;32m\]\u@\h"
     local __cur_location="\[\033[01;34m\]\w" # current directory color
-    local __git_branch_color="\[\033[36m\]" # git branch color
+    local __git_branch_color="\[\033[35m\]" # git branch color
     local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`' # show git branch format
-    local __prompt_tail="\[\033[35m\]:-)" # prompt color and symbol
+    local __prompt_tail="\[\033[36m\]><(((º>" # prompt color and symbol
     local __last_color="\[\033[00m\]" # command color
-    export PS1="$__user_and_host $__cur_location $__git_branch_color$__git_branch$__prompt_tail$__last_color "
+    export PS1="$__cur_location $__git_branch_color$__git_branch$__prompt_tail$__last_color "
 }
 color_my_prompt
 
 # show wd in tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+
+# z (see github.com/rupa/z, must be below color_my_prompt)
+. ~/z.sh
