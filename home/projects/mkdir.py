@@ -1,6 +1,6 @@
 '''
 Creates a folder directory consisting of a root folder named [date]_[project] 
-(date optional), by copying a template folder. Also writes a readme.md file.
+(date optional), by copying a template folder. Also writes a README.md file.
 Run this by typing '$python mkdir.py'.
 '''
 
@@ -31,7 +31,7 @@ def make_project_dir(name, date = True, template = './template', root = './'):
     except: 
         pass
 
-    # create readme.md file
+    # write README
     readthis = name.upper()+'\n\ncreated by: ' + os.getlogin() + '\ncreated at: ' + str(dt.datetime.now())
     readme = os.open(root + folder_name + "/README.md", os.O_RDWR | os.O_CREAT)
     os.write(readme, readthis)
